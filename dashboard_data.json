@@ -1,0 +1,181 @@
+{
+  "modelPerformance": {
+    "best_model": "Random Forest",
+    "auroc": 0.642,
+    "auprc": 0.199,
+    "sensitivity": 0.008,
+    "specificity": 0.999,
+    "brier_score": 0.096
+  },
+  "topRiskFactors": [
+    {
+      "feature": "number_inpatient",
+      "clinical_name": "Previous Hospitalizations",
+      "importance": 0.0168,
+      "rank": 1
+    },
+    {
+      "feature": "utilization_score",
+      "clinical_name": "Healthcare Utilization Pattern",
+      "importance": 0.0129,
+      "rank": 2
+    },
+    {
+      "feature": "time_in_hospital",
+      "clinical_name": "Current Length of Stay",
+      "importance": 0.006,
+      "rank": 3
+    },
+    {
+      "feature": "med_complexity",
+      "clinical_name": "Medication Management Complexity",
+      "importance": 0.0053,
+      "rank": 4
+    },
+    {
+      "feature": "total_med_changes",
+      "clinical_name": "Total Medication Adjustments",
+      "importance": 0.0034,
+      "rank": 5
+    },
+    {
+      "feature": "num_medications",
+      "clinical_name": "Medication Count (Polypharmacy)",
+      "importance": 0.0027,
+      "rank": 6
+    },
+    {
+      "feature": "num_diagnoses",
+      "clinical_name": "Number of Comorbidities",
+      "importance": 0.0026,
+      "rank": 7
+    },
+    {
+      "feature": "insulin_change",
+      "clinical_name": "Insulin Therapy Changes",
+      "importance": 0.0016,
+      "rank": 8
+    },
+    {
+      "feature": "diabetes_severity",
+      "clinical_name": "Diabetes Control Status",
+      "importance": 0.0016,
+      "rank": 9
+    },
+    {
+      "feature": "num_lab_procedures",
+      "clinical_name": "Num Lab Procedures",
+      "importance": 0.0014,
+      "rank": 10
+    }
+  ],
+  "clinicalRecommendations": [
+    "Implement care coordination for high healthcare utilizers",
+    "Monitor medication adherence after therapy adjustments",
+    "Consider medication reconciliation for polypharmacy patients"
+  ],
+  "confusionMatrix": [
+    [
+      18073,
+      10
+    ],
+    [
+      2252,
+      19
+    ]
+  ],
+  "samplePatients": [
+    {
+      "id": 1,
+      "name": "Patient 001",
+      "age": 72,
+      "gender": "M",
+      "condition": "Type 2 Diabetes",
+      "riskScore": 78,
+      "riskLevel": "High",
+      "lastVisit": "2024-01-15",
+      "nextActions": [
+        {
+          "priority": "High",
+          "action": "Schedule endocrinology consultation within 48 hours",
+          "reason": "Poor glucose control with recent medication changes"
+        },
+        {
+          "priority": "Medium",
+          "action": "Medication adherence counseling",
+          "reason": "Multiple recent medication adjustments detected"
+        }
+      ],
+      "keyFindings": [
+        "HbA1c >8% with rising trend",
+        "Recent insulin dose increases",
+        "2 emergency visits in past 6 months",
+        "High medication complexity score"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Patient 002",
+      "age": 58,
+      "gender": "F",
+      "condition": "Type 2 Diabetes",
+      "riskScore": 45,
+      "riskLevel": "Medium",
+      "lastVisit": "2024-01-20",
+      "nextActions": [
+        {
+          "priority": "Medium",
+          "action": "Schedule follow-up within 2 weeks",
+          "reason": "Moderate risk factors requiring monitoring"
+        },
+        {
+          "priority": "Low",
+          "action": "Diabetes education reinforcement",
+          "reason": "Opportunity for improved self-management"
+        }
+      ],
+      "keyFindings": [
+        "HbA1c 7.5% - approaching target",
+        "Stable medication regimen",
+        "1 hospitalization in past year",
+        "Good outpatient follow-up compliance"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Patient 003",
+      "age": 44,
+      "gender": "F",
+      "condition": "Type 2 Diabetes",
+      "riskScore": 22,
+      "riskLevel": "Low",
+      "lastVisit": "2024-01-25",
+      "nextActions": [
+        {
+          "priority": "Low",
+          "action": "Continue routine care",
+          "reason": "Well-controlled diabetes with stable condition"
+        },
+        {
+          "priority": "Low",
+          "action": "Annual comprehensive exam",
+          "reason": "Preventive care maintenance"
+        }
+      ],
+      "keyFindings": [
+        "HbA1c 6.8% - well controlled",
+        "No recent medication changes",
+        "No emergency visits in past year",
+        "Regular outpatient follow-up"
+      ]
+    }
+  ],
+  "cohortStats": {
+    "totalPatients": 150,
+    "highRisk": 23,
+    "mediumRisk": 67,
+    "lowRisk": 60,
+    "avgRiskScore": 42
+  },
+  "timestamp": "2025-09-09T21:20:26.168718"
+}
