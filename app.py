@@ -13,7 +13,7 @@ st.set_page_config(page_title="Chronic Care Risk Dashboard", layout="wide")
 
 
 
-DATA_PATH = r'C:\Users\vsriv\OneDrive\Desktop\Hackwell\dashboard_data.json'
+DATA_PATH = 'dashboard_data.json'
 
 # ---------- Helpers ----------
 
